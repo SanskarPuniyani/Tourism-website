@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Welcome to Sanskar Tourism</h1>
+    <p>Plan your perfect trip across India. Book hotels and flights with ease!</p>
+    {% if not session.loggedin %}
+        <a href="/register" class="button">Get Started</a>
+    {% endif %}
+{% endblock %}

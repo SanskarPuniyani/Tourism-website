@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sanskar Tourism</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        {% if session.loggedin %}
+            {% if session.is_admin %}
+                <a href="/admin/hotels">Add Hotel</a>
+                <a href="/admin/flights">Add Flight</a>
+                <a href="/admin/bookings">Manage Bookings</a>
+            {% endif %}
+            <a href="/search">Search</a>
+            <a href="/bookings">My Bookings</a>
+            <a href="/logout">Logout ({{ session.username }})</a>
+        {% else %}
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        {% endif %}
+    </nav>    
+
+    <main>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for msg in messages %}
+                        <li>{{ msg }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

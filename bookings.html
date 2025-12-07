@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>My Booking History</h2>
+    {% for booking in bookings %}
+        <div class="card">
+            <strong>{{ booking.booking_type.title() }}</strong><br>
+            {% if booking.booking_type == 'hotel' %}
+                Hotel: {{ booking.details.name }}<br>
+                City: {{ booking.details.city }}<br>
+                Check-in Date: {{ booking.checkin_date }}<br>
+                Check-out Date: {{ booking.checkout_date }}
+            {% else %}
+                Flight: {{ booking.details.flight_name }}<br>
+                {{ booking.details.from_city }} → {{ booking.details.to_city }}<br>
+                Flight Date: {{ booking.flight_date }}
+            {% endif %}
+            <br>No. of People: {{ booking.num_people }}<br>
+            Booking Date: {{ booking.booking_date }}
+        </div>
+    {% endfor %}
+{% endblock %}

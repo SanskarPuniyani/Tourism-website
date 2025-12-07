@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>All Bookings</h2>
+{% for booking in bookings %}
+    <div class="card">
+        <strong>{{ booking.booking_type.title() }}</strong><br>
+        ID: {{ booking.id }}<br>
+        User ID: {{ booking.user_id }}<br>
+        Booking ID: {{ booking.booking_id }}<br>
+        People: {{ booking.num_people }}<br>
+        Date: {{ booking.booking_date }}
+    </div>
+{% endfor %}
+{% endblock %}

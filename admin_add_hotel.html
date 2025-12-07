@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Add New Hotel</h2>
+<form method="post">
+    <input name="name" placeholder="Hotel Name" required><br>
+    <input name="city" placeholder="City" required><br>
+    <input type="number" name="price" placeholder="Price per night" required><br>
+    <button type="submit">Add Hotel</button>
+</form>
+{% endblock %}

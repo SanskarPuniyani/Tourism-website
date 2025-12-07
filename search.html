@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Search Hotels and Flights</h2>
+    <form method="post">
+        <input type="text" name="city" placeholder="Enter city name" required><br>
+        <label>Check-in Date:</label>
+        <input type="date" name="checkin_date"><br>
+        <label>Check-out Date:</label>
+        <input type="date" name="checkout_date"><br>
+        <label>Flight Date:</label>
+        <input type="date" name="flight_date"><br>
+        <button type="submit">Search</button>
+    </form>
+
+    <h3>Hotels</h3>
+    {% for hotel in hotels %}
+        <div class="card">
+            <strong>{{ hotel.name }}</strong><br>
+            City: {{ hotel.city }}<br>
+            ₹{{ hotel.price_per_night }} / night<br>
+            <a href="/book/hotel/{{ hotel.id }}">Book Hotel</a>
+        </div>
+    {% endfor %}
+
+    <h3>Flights</h3>
+    {% for flight in flights %}
+        <div class="card">
+            <strong>{{ flight.flight_name }}</strong><br>
+            {{ flight.from_city }} to {{ flight.to_city }}<br>
+            ₹{{ flight.price }}<br>
+            <a href="/book/flight/{{ flight.id }}">Book Flight</a>
+        </div>
+    {% endfor %}
+{% endblock %}

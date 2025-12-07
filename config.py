@@ -1,0 +1,5 @@
+MYSQL_HOST = 'localhost'
+MYSQL_USER = 'root'
+MYSQL_PASSWORD = '1105'
+MYSQL_DB = 'sanskar_tourism'
+SECRET_KEY = '1105'

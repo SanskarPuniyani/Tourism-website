@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Add New Flight</h2>
+<form method="post">
+    <input name="flight_name" placeholder="Flight Name" required><br>
+    <input name="from_city" placeholder="From City" required><br>
+    <input name="to_city" placeholder="To City" required><br>
+    <input type="number" name="price" placeholder="Price" required><br>
+    <button type="submit">Add Flight</button>
+</form>
+{% endblock %}

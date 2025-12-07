@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Book {{ booking_type.title() }}</h2>
+    <form method="post">
+        <label>No. of People:</label>
+        <input type="number" name="num_people" min="1" required><br>
+
+        {% if booking_type == 'hotel' %}
+            <label>Check-in Date:</label>
+            <input type="date" name="checkin_date" required><br>
+            <label>Check-out Date:</label>
+            <input type="date" name="checkout_date" required><br>
+        {% elif booking_type == 'flight' %}
+            <label>Flight Date:</label>
+            <input type="date" name="flight_date" required><br>
+        {% endif %}
+
+        <button type="submit">Confirm Booking</button>
+    </form>
+{% endblock %}
