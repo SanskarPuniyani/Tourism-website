@@ -5,7 +5,7 @@ CREATE TABLE users (
     username VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
-    is_admin BOOLEAN DEFAULT FALSE
+    is_admin BOOLEAN 0 
 );
 CREATE TABLE hotels (
     id INT AUTO_INCREMENT PRIMARY KEY,
