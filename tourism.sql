@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS sanskar_tourism;
-USE sanskar_tourism;
+CREATE DATABASE IF NOT EXISTS tourism;
+USE tourism;
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(100) NOT NULL,
